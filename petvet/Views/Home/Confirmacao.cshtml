@@ -1,0 +1,28 @@
+@model List<Agenda>
+@{
+    ViewData["Title"] = "Confirmação de Agendamento";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table border = "1">
+    <thead>
+        <tr>Nome:</tr><br>
+        <tr>Telefone:</tr><br>
+        <tr>Data:</tr><br>
+        <tr>Animal:</tr><br>
+        <tr>Serviço:</tr><br>
+        <tr>Observações:</tr><br>
+    </thead>
+    <tbody>
+        @foreach (Agenda petvet in Model) 
+        {
+                <tr>@petvet.nome</tr> <br>
+                <td>@petvet.telefone</td> <br>
+                <td>@petvet.data</td> <br>
+                <td>@petvet.animal</td> <br>
+                <td>@petvet.servico</td> <br>
+                <td>@petvet.observacao</td> <br>
+        }
+    </tbody>
+</table>
+<a asp-action="Agendamento">Realizar novo agendamento</a>
